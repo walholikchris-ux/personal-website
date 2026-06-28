@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>梁好 — 关卡策划 Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- #桌面 (Desktop) — 整个页面的大背景 -->
+<div class="desktop" id="desktop">
+
+  <!-- #菜单栏 (Menu Bar) — 顶部固定导航条，点击按钮切换窗口 -->
+  <nav class="menubar" id="menubar">
+    <div class="menubar-left">
+      <span class="apple-icon">&#9679;</span>
+      <span class="menu-item" data-window="about">关于我</span>
+      <span class="menu-item" data-window="edu">教育</span>
+      <span class="menu-item" data-window="skills">技能</span>
+      <span class="menu-item" data-window="intern">实习</span>
+      <span class="menu-item" data-window="projects">作品</span>
+      <span class="menu-item" data-window="games">游戏</span>
+      <span class="menu-item" data-window="contact">联系</span>
+    </div>
+    <div class="menubar-right">
+      <span class="menu-time" id="menuTime"></span>
+    </div>
+  </nav>
+
+  <!-- #桌面图标 (Desktop Icons) — 右侧快捷方式，双击打开窗口 -->
+  <div class="desktop-icons">
+    <div class="desktop-icon" data-window="about">
+      <div class="icon-img"><img src="images/icons/folder_icon.png" alt="关于我"></div>
+      <span>关于我</span>
+    </div>
+    <div class="desktop-icon" data-window="projects">
+      <div class="icon-img"><img src="images/icons/controller_icon.png" alt="关卡作品"></div>
+      <span>关卡作品</span>
+    </div>
+    <div class="desktop-icon" data-window="contact">
+      <div class="icon-img"><img src="images/icons/envelope_icon.png" alt="联系方式"></div>
+      <span>联系方式</span>
+    </div>
+    <div class="desktop-icon" data-window="intern">
+      <div class="icon-img"><img src="images/icons/keyboard_icon.png" alt="实习经历"></div>
+      <span>实习经历</span>
+    </div>
+    <div class="desktop-icon" data-window="pdf">
+      <div class="icon-img"><img src="images/icons/PDF_icon.png" alt="下载简历"></div>
+      <span>下载简历</span>
+    </div>
+    <div class="desktop-icon" data-window="feedback">
+      <div class="icon-img"><img src="images/icons/bubble_icon.png" alt="意见反馈"></div>
+      <span>意见反馈</span>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- #窗口：关于我 (Window: About)                  -->
+  <!-- ============================================ -->
+  <div class="window" id="win-about" style="top: 120px; left: 80px; z-index: 100;">
+    <!-- #标题栏 -->
+    <div class="window-titlebar">
+      <span class="window-close">□</span>
+      <span class="window-title">关于我 — 个人信息</span>
+      <span class="window-zoom">□</span>
+    </div>
+    <!-- #窗口内容 -->
+    <div class="window-body">
+      <div class="window-content">
+        <!-- #姓名大标题 -->
+        <h1 class="pixel-h1">梁好</h1>
+        <p class="subtitle">关卡策划实习生 · 中国美术学院 · 建筑艺术学院</p>
+        <!-- #点阵分割线 -->
+        <hr class="dithered-hr">
+        <!-- #个人信息 + 照片 横向布局 -->
+        <div class="about-row">
+          <table class="info-table about-table">
+            <tr><td class="label">姓名</td><td>梁好</td></tr>
+            <tr><td class="label">出生年月</td><td>2005年2月</td></tr>
+            <tr><td class="label">籍贯</td><td>福建省福州市</td></tr>
+            <tr><td class="label">手机</td><td>19106531294</td></tr>
+            <tr><td class="label">邮箱</td><td>lianghao25724@qq.com</td></tr>
+            <tr><td class="label">求职意向</td><td>关卡策划实习生 / 立刻到岗</td></tr>
+          </table>
+          <!-- #个人照片 -->
+          <div class="portrait-frame">
+            <img src="images/portrait.png" alt="梁好">
+          </div>
+        </div>
+        <!-- #个人介绍段落 -->
+        <p class="intro-text">
+          风景园林专业背景，拥有扎实的空间规划与动线推敲能力。熟练掌握从2D平面图纸到3D空间建模的推演转化，具备良好的建筑尺度感与视线引导直觉。热爱游戏关卡设计，致力于创造有叙事深度和探索乐趣的游戏空间。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- #窗口：教育背景 (Window: Education)            -->
+  <!-- ============================================ -->
+  <div class="window" id="win-edu" style="top: 100px; left: 420px; z-index: 90;">
+    <div class="window-titlebar">
+      <span class="window-close">□</span>
+      <span class="window-title">教育背景 — Educational Background</span>
+      <span class="window-zoom">□</span>
+    </div>
+    <div class="window-body">
+      <div class="window-content">
+        <!-- #学校名称 -->
+        <h2 class="pixel-h2">中国美术学院</h2>
+        <p class="date-range">2023.09 至今</p>
+        <p><strong>建筑艺术学院 — 风景园林专业（学士）</strong></p>
+        <p>绩点：4.1 / 5.0</p>
+        <hr class="dithered-hr">
+        <h3 class="pixel-h3">专业契合度</h3>
+        <!-- #列表 -->
+        <ul class="pixel-list">
+          <li>扎实的空间规划与动线推敲能力</li>
+          <li>熟练从2D平面图纸到3D空间建模的推演转化</li>
+          <li>良好的建筑尺度感与视线引导直觉</li>
+          <li>可无缝转化为关卡设计中的空间叙事与跑图流线设计</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- #窗口：专业技能 (Window: Skills)               -->
+  <!-- ============================================ -->
+  <div class="window" id="win-skills" style="top: 160px; left: 260px; z-index: 80;">
+    <div class="window-titlebar">
+      <span class="window-close">□</span>
+      <span class="window-title">专业技能 — Professional Skills</span>
+      <span class="window-zoom">□</span>
+    </div>
+    <div class="window-body">
+      <div class="window-content">
+        <h3 class="pixel-h3">引擎与工具</h3>
+        <!-- #技能标签组 -->
+        <div class="skill-tags">
+          <span class="skill-tag">UE5</span>
+          <span class="skill-tag">Unity</span>
+          <span class="skill-tag">SketchUp</span>
+          <span class="skill-tag">AutoCAD</span>
+          <span class="skill-tag">Photoshop</span>
+          <span class="skill-tag">Canva</span>
+          <span class="skill-tag">剪映专业版</span>
+        </div>
+
+        <h3 class="pixel-h3">编程与脚本</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Lua</span>
+          <span class="skill-tag">蓝图 (Blueprint)</span>
+          <span class="skill-tag">Vibe Coding</span>
+        </div>
+
+        <h3 class="pixel-h3">语言能力</h3>
+        <table class="info-table">
+          <tr><td class="label">英语</td><td>CET-6（549分）</td></tr>
+          <tr><td class="label">德语</td><td>欧标 B1</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- #窗口：实习经历 (Window: Internship)           -->
+  <!-- ============================================ -->
+  <div class="window" id="win-intern" style="top: 140px; left: 140px; z-index: 70;">
+    <div class="window-titlebar">
+      <span class="window-close">□</span>
+      <span class="window-title">实习经历 — Internship</span>
+      <span class="window-zoom">□</span>
+    </div>
+    <div class="window-body">
+      <div class="window-content">
+        <h2 class="pixel-h2">网易雷火 · 祝融工作室</h2>
+        <p class="company-project">逆水寒项目组 — 任务策划实习生</p>
+        <p class="date-range">2026.03 — 2026.06</p>
+        <hr class="dithered-hr">
+
+        <h3 class="pixel-h3">▸ 大世界配置</h3>
+        <p>参与大世界区域氛围搭建，负责任务剧本的配置落地、NPC布置、道具与奖励投放，在具体执行层面落实设计预期。</p>
+
+        <h3 class="pixel-h3">▸ 副本与流程</h3>
+        <p>使用可视化编程工具创建并配置任务副本，控制副本内事件流程与触发逻辑。</p>
+
+        <h3 class="pixel-h3">▸ 线上维护</h3>
+        <p>独立配置并上线 <strong>10+</strong> 独立任务，处理测试及线上反馈 <strong>200+</strong> 条，跟进Bug修复与体验调优。</p>
+
+        <hr class="dithered-hr">
+
+        <!-- #实习经历2：解放日报 -->
+        <h2 class="pixel-h2">解放日报 · 原点栏目</h2>
+        <p class="company-project">特稿实习生（远程）</p>
+        <p class="date-range">2025.07 — 2025.11</p>
+        <hr class="dithered-hr">
+
+        <h3 class="pixel-h3">▸ 选题策划与采写</h3>
+        <p>独立负责社会议题的线索挖掘与选题申报，参与3篇深度报道的采访设计、内容采写，作品获栏目编辑采用并发布。</p>
+
+        <h3 class="pixel-h3">▸ 新闻短视频</h3>
+        <p>参与栏目新媒体内容建设，根据热点新闻，独立完成短视频脚本构思、素材剪辑与后期包装，产出新闻短视频10+条。</p>
+
+        <h3 class="pixel-h3">▸ 信息整合与内容构建</h3>
+        <p>系统梳理复杂信源与背景材料，构建清晰叙事逻辑，能够将碎片信息转化为结构严谨、表达流畅的文档。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- #窗口：项目作品 (Window: Projects)             -->
+  <!-- ============================================ -->
+  <div class="window" id="win-projects" style="top: 100px; left: 180px; z-index: 60;">
+    <div class="window-titlebar">
+      <span class="window-close">□</span>
+      <span class="window-title">项目作品 — Projects</span>
+      <span class="window-zoom">□</span>
+    </div>
+    <div class="window-body">
+      <div class="window-content">
+
+        <!-- #项目卡片1：机核 BoooJam 2026 -->
+        <div class="project-card">
+          <h3 class="pixel-h3">机核 BoooJam 2026 ·「房间 Room」· 关卡策划</h3>
+          <p class="date-range">2026.05</p>
+          <p>在12人团队中独立承担3D恐怖氛围游戏的关卡设计，构建约20分钟游戏全流程白盒，通过空间语言引导玩家完成探索逻辑，实现核心玩法与节奏的初步落地。</p>
+          <a href="https://www.gcores.com/games/180059" target="_blank" class="web-link">▸ 去机核查看详情（微恐慎入）</a>
+        </div>
+
+        <!-- #项目卡片3：《行动No.0》 -->
+        <div class="project-card">
+          <h3 class="pixel-h3">《行动 No.0》· 个人UE5白盒关卡</h3>
+          <p class="date-range">2026.04</p>
+          <p>独立完成白盒搭建与玩法原型设计。在3D场景中融合潜行、近战机制，围绕"非对称对抗"核心体验组织空间结构。加强剧情成分，通过场景线索与关卡节奏配合传递叙事信息。</p>
+          <!-- #B站视频嵌入 -->
+          <div class="video-wrapper">
+            <iframe src="https://player.bilibili.com/player.html?bvid=BV1rS736JERB&page=1&high_quality=1"
+                    frameborder="0" allowfullscreen
+                    sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+          </div>
+          <a href="https://www.bilibili.com/video/BV1rS736JERB" target="_blank" class="web-link">
+            ▸ 在B站观看演示视频
+          </a>
+        </div>
+
+        <!-- #项目卡片4：《迷箱》 -->
+        <div class="project-card">
+          <h3 class="pixel-h3">《迷箱》· 个人UE5白盒关卡</h3>
+          <p class="date-range">2026.01 — 2026.02</p>
+          <p>独立在UE5中搭建的第三人称3D平台跳跃与解谜白盒关卡。包含从基础跳跃、攀爬到锁钥机制、动态机关的完整体验闭环。</p>
+          <div class="video-wrapper">
+            <iframe src="https://player.bilibili.com/player.html?bvid=BV1NBD9B9Ejo&page=1&high_quality=1"
+                    frameborder="0" allowfullscreen
+                    sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+          </div>
+          <a href="https://www.bilibili.com/video/BV1NBD9B9Ejo" target="_blank" class="web-link">
+            ▸ 在B站观看演示视频
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- #窗口：游戏经历 (Window: Game Experience)      -->
+  <!-- ============================================ -->
+  <div class="window" id="win-games" style="top: 180px; left: 320px; z-index: 50;">
+    <div class="window-titlebar">
+      <span class="window-close">□</span>
+      <span class="window-title">游戏经历 — Game Shelf</span>
+      <span class="window-zoom">□</span>
+    </div>
+    <div class="window-body">
+      <div class="window-content">
+        <!-- #游戏墙统计条 -->
+        <div class="gameshelf-stats" id="gameshelf-stats"></div>
+        <!-- #游戏墙分类筛选 -->
+        <div class="gameshelf-filters" id="gameshelf-filters"></div>
+        <!-- #游戏墙封面网格 -->
+        <div class="gameshelf-grid" id="gameshelf-grid"></div>
+        <!-- #游戏墙喜好短评 -->
+        <p class="note-text" style="margin-top: 16px; text-align: center;">
+          偏好叙事驱动的空间探索体验，关注关卡节奏、场景叙事与交互密度。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- #窗口：联系方式 (Window: Contact)              -->
+  <!-- ============================================ -->
+  <div class="window" id="win-contact" style="top: 200px; left: 500px; z-index: 40;">
+    <div class="window-titlebar">
+      <span class="window-close">□</span>
+      <span class="window-title">联系方式 — Contact</span>
+      <span class="window-zoom">□</span>
+    </div>
+    <div class="window-body">
+      <div class="window-content">
+        <table class="info-table">
+          <tr><td class="label">邮箱</td><td><a href="mailto:lianghao25724@qq.com" class="web-link">lianghao25724@qq.com</a></td></tr>
+          <tr><td class="label">电话</td><td>19106531294</td></tr>
+          <tr><td class="label">院校</td><td>中国美术学院 · 建筑艺术学院</td></tr>
+          <tr><td class="label">籍贯</td><td>福建省福州市</td></tr>
+        </table>
+        <hr class="dithered-hr">
+        <!-- #闪烁提示文字 -->
+        <p class="blink-text">(•ㅂ•)/ 期待与您交流</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================ -->
+  <!-- #窗口：意见反馈 (Window: Feedback)               -->
+  <!-- ============================================ -->
+  <div class="window" id="win-feedback" style="top: 160px; left: 240px; z-index: 30;">
+    <div class="window-titlebar">
+      <span class="window-title">意见反馈 — Feedback</span>
+      <span class="window-zoom">□</span>
+      <span class="window-close">×</span>
+    </div>
+    <div class="window-body">
+      <div class="window-content" style="text-align:center;">
+        <p>您的意见和反馈对我来说非常宝贵。无论是针对个人站、简历、作品集……有什么想说的，都可以在这里留言。</p>
+        <hr class="dithered-hr">
+        <p class="pixel-h3">认识我，快用POME来向我匿名发问！</p>
+        <p class="note-text">本想做一套站内反馈系统，但静态网页承载不了，于是借用了第三方匿名提问箱。别担心，我看不到您的身份。如果愿意留下联系方式，我看到后会主动联系您。</p>
+        <a href="https://www.pome.vip/d067d2c225" target="_blank" class="web-link">https://www.pome.vip/d067d2c225</a>
+        <p class="pixel-h3" style="margin-top:16px;">扫码匿名提问</p>
+        <div style="width:160px; margin:8px auto;">
+          <img src="images/qrcode.png" alt="POME QR" style="width:100%; display:block; image-rendering:pixelated;">
+        </div>
+        <p class="note-text" style="margin-top:8px;">—— POME 匿名提问箱</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- #窗口：成就 (Window: Achievement)                -->
+  <!-- ============================================ -->
+  <div class="window" id="win-achievement" style="top: 50%; left: 50%; z-index: 999; display:none;">
+    <div class="window-titlebar">
+      <span class="window-title">&#9733; 成就解锁</span>
+      <span class="window-close">×</span>
+    </div>
+    <div class="window-body">
+      <div class="window-content" style="text-align:center;">
+        <div class="achieve-icon"><img src="images/icons/trophy.png" alt="成就"></div>
+        <p class="pixel-h2" style="margin-top:8px;">全勤奖章</p>
+        <p class="note-text">你浏览了网站的所有内容。既然看到了这里，不如联系一下？</p>
+        <div style="text-align:right; margin-top:14px;">
+          <button type="button" class="win95-btn" onclick="document.getElementById('win-achievement').style.display='none';document.getElementById('win-achievement').classList.remove('active');">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /desktop -->
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1025 @@
+/* =============================================
+   复古桌面 GUI 风格 — 梁好个人网站
+   Classic Mac OS / Windows 95 Y2K Aesthetic
+   ============================================= */
+
+/* =============================================
+   自定义字体声明 (Custom Font — Fusion Pixel)
+   融合像素字体，12px 等宽/比例，覆盖中/日/韩/拉丁
+   ============================================= */
+
+@font-face {
+  font-family: 'Fusion Pixel';
+  src: url('../fonts/fusion-pixel-12px-proportional-zh_hans.otf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+4E00-9FFF, U+3400-4DBF, U+2F00-2FDF, U+2E80-2EFF, U+3000-303F, U+31C0-31EF, U+FE10-FF1F, U+FF01-FF5E, U+2010-2027, U+3001-3002, U+2018-2019, U+201C-201D, U+3010-3011, U+300A-300B;
+}
+
+@font-face {
+  font-family: 'Fusion Pixel';
+  src: url('../fonts/fusion-pixel-12px-proportional-zh_hant.otf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+4E00-9FFF, U+3400-4DBF;
+}
+
+@font-face {
+  font-family: 'Fusion Pixel';
+  src: url('../fonts/fusion-pixel-12px-proportional-ja.otf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+FF65-FF9F;
+}
+
+@font-face {
+  font-family: 'Fusion Pixel';
+  src: url('../fonts/fusion-pixel-12px-proportional-ko.otf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+AC00-D7AF, U+1100-11FF, U+3130-318F;
+}
+
+@font-face {
+  font-family: 'Fusion Pixel';
+  src: url('../fonts/fusion-pixel-12px-proportional-latin.otf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* =============================================
+   🎛️  视觉配置面板 (VISUAL CONFIG PANEL)
+   改颜色/字体/字号只需要改下面这些值！
+   保存文件 → 刷新浏览器 → 立刻生效
+   ============================================= */
+
+:root {
+
+  /* ---- 配色方案 (Color Palette) ---- */
+  --bg-desktop:        #c0c0c0;  /* 桌面背景色（Win95 经典灰）*/
+  --bg-image:          url('../images/backgrounds/desktop.png');  /* 桌面背景图 */
+  --bg-window:         #c0c0c0;  /* 窗口面板底色（Win95 经典灰）*/
+  --bg-content:        #ffffff;  /* 内容区白色 */
+  --color-titlebar:    #000080;  /* 标题栏颜色（经典Windows蓝）*/
+  --color-titlebar-end:#1084d0;  /* 标题栏渐变右端（可选渐变用）*/
+  --color-title-text:  #ffffff;  /* 标题栏文字颜色 */
+  --color-highlight:   #ffffff;  /* 凸起高光线（纯白）*/
+  --color-shadow-outer:#000000;  /* 外层暗影（纯黑）*/
+  --color-shadow-inner:#808080;  /* 内层暗影（深灰）*/
+  --color-face:        #c0c0c0;  /* 按钮/面板面颜色（经典灰）*/
+  --color-text:        #000000;  /* 正文颜色（纯黑）*/
+  --color-text-dim:    #555555;  /* 次要文字颜色（灰色）*/
+  --color-link:        #0000ff;  /* 链接颜色（经典蓝）*/
+  --color-link-visited:#800080;  /* 已访问链接颜色（经典紫）*/
+  --color-hover-bg:    #000080;  /* 悬停高亮背景色 */
+  --color-hover-text:  #ffffff;  /* 悬停高亮文字色 */
+  --color-tag-bg:      #c0c0c0;  /* 技能标签底色（Win95灰）*/
+  --color-card-bg:     #ffffff;  /* 项目卡片底色（白色内容区）*/
+
+  /* ---- 字体 (Fonts) ---- */
+  --font-heading:      'Fusion Pixel', 'Press Start 2P', monospace;  /* 标题字体（中文像素 + 英文像素回退）*/
+  --font-body:         'Fusion Pixel', 'VT323', 'Courier New', monospace;  /* 正文字体（中文像素 + 英文终端回退）*/
+
+  /* ---- 字号 (Font Sizes) ---- */
+  --size-body:         1.1rem;     /* 正文基础字号 */
+  --size-h1:           1.2rem;     /* 大标题（姓名）*/
+  --size-h2:           0.85rem;    /* 二级标题（机构名）*/
+  --size-h3:           0.75rem;     /* 三级标题（小标题）*/
+  --size-small:        0.9rem;     /* 辅助文字 */
+  --size-tag:          0.9rem;    /* 技能标签字号 */
+  --size-menu:         1rem;       /* 菜单栏字号 */
+  --size-label:        0.9rem;    /* 表格表头字号 */
+
+  /* ---- 间距与尺寸 (Spacing & Sizing) ---- */
+  --window-min-width:  440px;      /* 窗口最小宽度 */
+  --window-max-width:  660px;      /* 窗口最大宽度 */
+  --window-max-height: 520px;      /* 窗口内容区最大高度 */
+  --window-padding:    16px 20px;  /* 窗口内边距 */
+  --border-thick:      3px;        /* 窗口粗边框 */
+  --border-thin:       2px;        /* 组件细边框 */
+  --shadow-offset:     8px;        /* 窗口阴影偏移量 */
+  --menubar-height:    34px;       /* 菜单栏高度 */
+  --gap-tags:          6px;        /* 技能标签间距 */
+  --icon-size:         48px;       /* 桌面图标图片大小（像素）*/
+
+  /* ---- 动效开关 (Animations) ---- */
+  /* 设为 0 关闭闪烁，设为 1.2s 开启闪烁 */
+  --blink-speed:       1.2s;
+
+  /* ---- 光标 (Custom Cursors) ---- */
+  /* 光标大小 = 图片文件实际像素尺寸。想调大小→用PS/画图缩放PNG文件 */
+  --cursor-arrow:      url('../images/icons/StandardArrow_icon.png') 2 2, auto;
+  --cursor-hand:       url('../images/icons/Hand Pointer_icon.png') 8 2, pointer;
+}
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: #c0c0c0;
+  overflow: hidden;
+  height: 100vh;
+  cursor: var(--cursor-arrow);
+  image-rendering: pixelated;
+}
+
+/* 所有可点击元素使用手型光标 */
+a, .menu-item, .desktop-icon, .window-close, .window-zoom, .web-link,
+button, [onclick], .project-card, .skill-tag {
+  cursor: var(--cursor-hand);
+}
+
+/* 标题栏拖拽时显示箭头光标 */
+.window-titlebar {
+  cursor: var(--cursor-arrow);
+}
+
+/* #桌面背景 (Desktop Background) */
+.desktop {
+  min-height: 100vh;
+  background-color: var(--bg-desktop);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  padding-top: var(--menubar-height);
+}
+
+/* 噪点纹理叠加层 */
+.desktop::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/* #菜单栏 (Menu Bar) — 顶部固定导航条 */
+.menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--menubar-height);
+  z-index: 10000;
+  background: var(--color-titlebar);
+  border-bottom: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  font-family: var(--font-body);
+  font-size: var(--size-menu);
+  letter-spacing: 0.5px;
+}
+
+.menubar-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.menubar-right {
+  display: flex;
+  align-items: center;
+}
+
+.apple-icon {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-right: 16px;
+  cursor: default;
+  text-shadow: 0 0 2px rgba(255,255,255,0.5);
+}
+
+/* 菜单按钮 (Menu Button) */
+.menu-item {
+  color: var(--color-title-text);
+  padding: 4px 14px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 0;
+  user-select: none;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  /* 凸起按钮效果 */
+  background: var(--color-face);
+  color: var(--color-text);
+  border-top: 2px solid var(--color-highlight);
+  border-left: 2px solid var(--color-highlight);
+  border-right: 2px solid var(--color-shadow-outer);
+  border-bottom: 2px solid var(--color-shadow-outer);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+}
+
+.menu-item:active {
+  /* 按下凹陷 */
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: none;
+}
+
+.menu-time {
+  color: var(--color-title-text);
+  font-family: var(--font-body);
+  font-size: var(--size-menu);
+}
+
+/* #桌面图标 (Desktop Icons) — 右侧可双击的快捷方式 */
+.desktop-icons {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 6px;
+  border: 2px solid transparent;
+  width: 80px;
+  text-align: center;
+}
+
+.desktop-icon:hover {
+  /* 凸起虚线选中框 */
+  border-top: 1px dotted var(--color-shadow-outer);
+  border-left: 1px dotted var(--color-shadow-outer);
+  border-right: 1px dotted var(--color-highlight);
+  border-bottom: 1px dotted var(--color-highlight);
+  background: rgba(0,0,128,0.06);
+}
+
+.desktop-icon .icon-img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop-icon .icon-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.desktop-icon span {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-text);
+  word-break: keep-all;
+}
+
+/* #窗口容器 (Window Container) — Win95 凸起面板 */
+.window {
+  position: absolute;
+  min-width: var(--window-min-width);
+  max-width: var(--window-max-width);
+  background: var(--color-face);
+  /* 凸起立体边框：左上白，右下黑+深灰 */
+  border-top: 2px solid var(--color-highlight);
+  border-left: 2px solid var(--color-highlight);
+  border-right: 2px solid var(--color-shadow-outer);
+  border-bottom: 2px solid var(--color-shadow-outer);
+  box-shadow:
+    inset -2px -2px 0 var(--color-shadow-inner),
+    2px 2px 0 rgba(0,0,0,0.15);
+  image-rendering: auto;
+  display: none;
+  flex-direction: column;
+  padding: 1px; /* 给内层面板留空间 */
+}
+
+.window.active {
+  display: flex;
+}
+
+/* #窗口标题栏 (Window Title Bar) — Win95 渐变标题栏，可拖拽 */
+.window-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, var(--color-titlebar), var(--color-titlebar-end));
+  color: var(--color-title-text);
+  padding: 2px 4px;
+  cursor: move;
+  user-select: none;
+  font-family: var(--font-body);
+  font-size: var(--size-menu);
+  letter-spacing: 0.3px;
+  min-height: 22px;
+}
+
+.window-title {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 4px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+/* 控制按钮：凸起方块 (Win95 Raised Button) */
+.window-close,
+.window-zoom {
+  width: 16px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 凸起斜面：左上白，右下黑+深灰 */
+  border-top: 2px solid var(--color-highlight);
+  border-left: 2px solid var(--color-highlight);
+  border-right: 2px solid var(--color-shadow-outer);
+  border-bottom: 2px solid var(--color-shadow-outer);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+  background: var(--color-face);
+  color: var(--color-text);
+  font-size: 0.55rem;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  line-height: 1;
+  font-weight: bold;
+  padding: 0;
+  margin: 1px;
+}
+
+.window-close:hover,
+.window-zoom:hover {
+  background: #dfdfdf;
+}
+
+.window-close:active,
+.window-zoom:active {
+  /* 按下时反转：左上黑，右下白（凹陷效果）*/
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: none;
+}
+
+/* 标题栏右侧按钮组 */
+.window-btns {
+  display: flex;
+  gap: 2px;
+  margin-left: auto;
+}
+
+/* 关闭按钮 × 放大 */
+.window-btns .window-close {
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 0.7;
+}
+
+/* #窗口内容区 (Window Body) — Win95 凹陷面板 */
+.window-body {
+  margin: 1px;
+  padding: var(--window-padding);
+  overflow-y: auto;
+  max-height: var(--window-max-height);
+  flex: 1;
+  /* 凹陷立体边框：左上黑+深灰，右下白 */
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+  background: var(--bg-content);
+}
+
+/* #个人照片 (Portrait Frame) — Win95 凹陷内嵌 */
+/* 关于我窗口横向布局：表格 + 照片 */
+.about-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.about-row .about-table {
+  flex: 1;
+  min-width: 0;
+}
+
+.portrait-frame {
+  width: 150px;
+  margin: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+  background: #d0d0d0;
+  line-height: 0;
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* #标题样式 (Heading Styles) */
+.pixel-h1 {
+  font-family: var(--font-heading);
+  font-size: var(--size-h1);
+  line-height: 1.8;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.pixel-h2 {
+  font-family: var(--font-heading);
+  font-size: var(--size-h2);
+  line-height: 1.8;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.pixel-h3 {
+  font-family: var(--font-heading);
+  font-size: var(--size-h3);
+  line-height: 2;
+  margin: 16px 0 8px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-titlebar);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  color: var(--color-text-dim);
+  margin-bottom: 12px;
+}
+
+.date-range {
+  font-family: var(--font-body);
+  color: var(--color-text-dim);
+  font-size: var(--size-small);
+}
+
+.company-project {
+  font-family: var(--font-body);
+  font-weight: bold;
+  color: var(--color-titlebar);
+}
+
+.intro-text {
+  margin-top: 12px;
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  line-height: 1.7;
+}
+
+.note-text {
+  font-family: var(--font-body);
+  font-size: var(--size-small);
+  color: var(--color-text-dim);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* #分割线 — Win95 凹陷凹槽 */
+.dithered-hr {
+  border: none;
+  height: 0;
+  margin: 12px 0;
+  /* 凹陷单线：上黑下白 */
+  border-top: 2px solid var(--color-shadow-inner);
+  border-bottom: 2px solid var(--color-highlight);
+}
+
+/* #信息表格 (Info Table) — Win95 凹陷面板表格 */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  /* 凹陷外框 */
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+}
+
+.info-table td {
+  padding: 6px 10px;
+  vertical-align: top;
+  border: none;
+  background: var(--bg-content);
+}
+
+.info-table td.label {
+  background: var(--color-titlebar);
+  color: var(--color-title-text);
+  width: 90px;
+  font-family: var(--font-heading);
+  font-size: var(--size-label);
+  letter-spacing: 0.5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* #游戏列表 (Game Table) — Win95 凹陷面板 */
+.game-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  margin: 6px 0;
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+}
+
+.game-table td {
+  padding: 4px 10px;
+  border: none;
+  background: var(--bg-content);
+}
+
+.game-table td:last-child {
+  text-align: right;
+  width: 80px;
+  color: var(--color-text-dim);
+}
+
+/* #技能标签 (Skill Tags) — Win95 凸起按钮 */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-tags);
+  margin: 8px 0 4px 0;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--color-face);
+  /* 凸起斜面：左上白，右下黑+深灰 */
+  border-top: 2px solid var(--color-highlight);
+  border-left: 2px solid var(--color-highlight);
+  border-right: 2px solid var(--color-shadow-outer);
+  border-bottom: 2px solid var(--color-shadow-outer);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+  font-family: var(--font-heading);
+  font-size: var(--size-tag);
+  letter-spacing: 0.5px;
+  cursor: default;
+  user-select: none;
+  image-rendering: pixelated;
+}
+
+.skill-tag:hover {
+  background: #d0d0d0;
+}
+
+.skill-tag:active {
+  /* 按下凹陷 */
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: none;
+}
+
+/* #项目卡片 (Project Card) — Win95 凹陷面板 */
+.project-card {
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  background: var(--bg-content);
+  position: relative;
+}
+
+/* #视频嵌入区域 (Video Embed) — Win95 凹陷面板 */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin: 12px 0;
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* #超链接 (Links — Web 1.0 风格带下划线) */
+.web-link {
+  color: var(--color-link);
+  text-decoration: underline;
+  font-family: var(--font-body);
+  font-size: var(--size-small);
+  cursor: pointer;
+}
+
+.web-link:visited {
+  color: var(--color-link-visited);
+}
+
+.web-link:hover {
+  background: var(--color-link);
+  color: var(--color-hover-text);
+  text-decoration: none;
+}
+
+/* #闪烁文字 (Blink Text) — "期待与您交流" */
+.blink-text {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  animation: blink var(--blink-speed) step-end infinite;
+  text-align: center;
+  margin-top: 12px;
+  background: #ffffcc;
+  padding: 6px 12px;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid var(--color-shadow-outer);
+  border-left: 1px solid var(--color-shadow-outer);
+  border-right: 1px solid var(--color-highlight);
+  border-bottom: 1px solid var(--color-highlight);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* #像素列表 (Pixel List) — 带▸符号的列表 */
+.pixel-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.pixel-list li {
+  padding: 3px 0;
+  padding-left: 18px;
+  position: relative;
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+}
+
+.pixel-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--color-titlebar);
+  font-size: 0.8rem;
+}
+
+/* #复古滚动条 (Retro Scrollbar) — Win95 棋盘格凹槽 + 凸起滑块 */
+.window-body::-webkit-scrollbar {
+  width: 18px;
+  background: var(--color-face);
+}
+
+.window-body::-webkit-scrollbar-track {
+  /* 棋盘格点阵：中灰+纯白 1px 交替 */
+  background-image:
+    linear-gradient(45deg, #808080 25%, transparent 25%),
+    linear-gradient(-45deg, #808080 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #808080 75%),
+    linear-gradient(-45deg, transparent 75%, #808080 75%);
+  background-size: 2px 2px;
+  background-position: 0 0, 0 1px, 1px -1px, -1px 0px;
+  background-color: #ffffff;
+}
+
+.window-body::-webkit-scrollbar-thumb {
+  /* 凸起方块滑块 */
+  background: var(--color-face);
+  border-top: 2px solid var(--color-highlight);
+  border-left: 2px solid var(--color-highlight);
+  border-right: 2px solid var(--color-shadow-outer);
+  border-bottom: 2px solid var(--color-shadow-outer);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+  min-height: 30px;
+}
+
+.window-body::-webkit-scrollbar-thumb:hover {
+  background: #d0d0d0;
+}
+
+.window-body::-webkit-scrollbar-thumb:active {
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: none;
+}
+
+.window-body::-webkit-scrollbar-button {
+  /* 凸起箭头按钮 */
+  background: var(--color-face);
+  border-top: 2px solid var(--color-highlight);
+  border-left: 2px solid var(--color-highlight);
+  border-right: 2px solid var(--color-shadow-outer);
+  border-bottom: 2px solid var(--color-shadow-outer);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+  height: 18px;
+  width: 18px;
+}
+
+.window-body::-webkit-scrollbar-button:hover {
+  background: #d0d0d0;
+}
+
+.window-body::-webkit-scrollbar-button:active {
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: none;
+}
+
+.window-body::-webkit-scrollbar-corner {
+  background: var(--color-face);
+}
+
+/* #游戏墙 (Game Shelf) — 封面网格 + 筛选 */
+.gameshelf-stats {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: var(--size-small);
+  color: var(--color-text-dim);
+}
+
+.gameshelf-banner {
+  text-align: center;
+}
+
+.gameshelf-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.gameshelf-filters .gs-filt-btn {
+  padding: 2px 10px;
+  font-family: var(--font-heading);
+  font-size: 0.55rem;
+  letter-spacing: 0.5px;
+  background: var(--color-face);
+  border-top: 2px solid var(--color-highlight);
+  border-left: 2px solid var(--color-highlight);
+  border-right: 2px solid var(--color-shadow-outer);
+  border-bottom: 2px solid var(--color-shadow-outer);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+  cursor: pointer;
+  user-select: none;
+  color: var(--color-text);
+}
+
+.gameshelf-filters .gs-filt-btn:hover {
+  background: #d0d0d0;
+}
+
+.gameshelf-filters .gs-filt-btn.active {
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: none;
+  background: #b0b0b0;
+}
+
+.gameshelf-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.gameshelf-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.gameshelf-card.hidden {
+  display: none;
+}
+
+.gameshelf-card .gs-cover-wrap {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background: #d0d0d0;
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+}
+
+.gameshelf-card .gs-cover-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gameshelf-card .gs-pin-badge {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: var(--color-titlebar);
+  color: var(--color-title-text);
+  font-family: var(--font-heading);
+  font-size: 0.3rem;
+  padding: 1px 5px;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.gameshelf-card .gs-name {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gameshelf-card .gs-meta {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--color-text-dim);
+  text-align: center;
+}
+
+/* #Win95 输入框 (Input) — 凹陷文本输入 */
+.win95-input {
+  width: 100%;
+  padding: 6px 8px;
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+  background: var(--bg-content);
+  color: var(--color-text);
+  outline: none;
+  resize: vertical;
+}
+.win95-input:focus { background: #fffff8; }
+
+/* #Win95 按钮 (Button) — 凸起提交按钮 */
+.win95-btn {
+  padding: 4px 24px;
+  font-family: var(--font-heading);
+  font-size: 0.5rem;
+  letter-spacing: 1px;
+  background: var(--color-face);
+  border-top: 2px solid var(--color-highlight);
+  border-left: 2px solid var(--color-highlight);
+  border-right: 2px solid var(--color-shadow-outer);
+  border-bottom: 2px solid var(--color-shadow-outer);
+  box-shadow: inset -2px -2px 0 var(--color-shadow-inner);
+  cursor: pointer;
+  color: var(--color-text);
+}
+.win95-btn:hover { background: #d0d0d0; }
+.win95-btn:active {
+  border-top: 2px solid var(--color-shadow-outer);
+  border-left: 2px solid var(--color-shadow-outer);
+  border-right: 2px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
+  box-shadow: none;
+}
+
+/* #成就奖杯图标 */
+.achieve-icon {
+  width: 64px; height: 64px; margin: 0 auto;
+}
+.achieve-icon img { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+
+/* #移动端适配 (Mobile Responsive) */
+@media (max-width: 768px) {
+  .window {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    min-width: auto;
+    max-width: 100%;
+    width: calc(100vw - 20px) !important;
+    margin: 10px auto;
+    box-shadow: 4px 4px 0px 0px var(--color-shadow);
+  }
+
+  .desktop {
+    padding: 40px 8px 20px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .desktop-icons {
+    display: none;
+  }
+
+  .menubar {
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: flex-start;
+    gap: 2px;
+  }
+
+  .menu-item {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+
+  .menu-time {
+    display: none;
+  }
+
+  .gameshelf-grid { grid-template-columns: repeat(2, 1fr); }
+  .gameshelf-stats { font-size: 0.8rem; }
+  .pixel-h1 { font-size: 0.9rem; }
+  .pixel-h2 { font-size: 0.55rem; }
+  .pixel-h3 { font-size: 0.42rem; }
+  body      { font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+  .window {
+    box-shadow: 3px 3px 0px 0px var(--color-shadow);
+    border: 2px solid var(--color-border);
+  }
+
+  .window-body {
+    padding: 10px 12px;
+    max-height: 380px;
+  }
+
+  .skill-tag { font-size: 0.4rem; }
+  .pixel-h1  { font-size: 0.75rem; }
+}
