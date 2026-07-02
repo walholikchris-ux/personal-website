@@ -265,7 +265,16 @@
       cover: "images/games/501300.jpg", playtime_min: 360, pinned: true },
     { slug: "paper-house", name: "纸房子", en: "Paper House",
       category: "独立与情感叙事", platform: "PC", appid: 3528450,
-      cover: "images/games/3528450.jpg", playtime_min: 480, pinned: false }
+      cover: "images/games/3528450.jpg", playtime_min: 480, pinned: false },
+    { slug: "the-big-con", name: "The Big Con", en: "The Big Con",
+      category: "独立与情感叙事", platform: "PC", appid: 1152010,
+      cover: "images/games/1152010.jpg", playtime_min: 324, pinned: false },
+    { slug: "whos-lila", name: "Who's Lila?", en: "Who's Lila?",
+      category: "独立与情感叙事", platform: "PC", appid: 1697700,
+      cover: "images/games/1697700.jpg", playtime_min: 360, pinned: false },
+    { slug: "man-home", name: "Man I Just Wanna Go Home", en: "Man I Just Wanna Go Home",
+      category: "独立与情感叙事", platform: "PC", appid: 3010070,
+      cover: "images/games/3010070.jpg", playtime_min: 60, pinned: false }
   ];
 
   var gameShelfActiveCat = 'all';
