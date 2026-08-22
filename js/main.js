@@ -200,16 +200,16 @@
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
       var win = btn.closest('.window');
+      var body = win.querySelector('.window-body');
+      if (!body) return;
       bringToFront(win);
-      // Toggle max-width for a simple "zoom" effect
-      if (win.style.maxWidth === '100%') {
-        win.style.maxWidth = '660px';
-        win.style.left = '';
-        win.style.top = '';
+      // 收起/展开内容区
+      if (body.style.display === 'none') {
+        body.style.display = '';
+        btn.innerHTML = '<span style="display:block;width:8px;height:2px;background:#000;"></span>';
       } else {
-        win.style.maxWidth = '100%';
-        win.style.left = '10px';
-        win.style.top = '50px';
+        body.style.display = 'none';
+        btn.innerHTML = '<span style="display:block;width:8px;height:8px;background:#000;border-top:2px solid #000;"></span>';
       }
     });
   });
@@ -463,7 +463,7 @@
   /* ===== OPEN DEFAULT WINDOWS ON LOAD ===== */
   openWindow('about');
   setTimeout(function () {
-    openWindow('projects');
+    openWindow('intern');
     // 确保关于我窗口在最上层
     var aboutWin = document.getElementById('win-about');
     if (aboutWin) { zCounter += 5; aboutWin.style.zIndex = zCounter; activeWindow = aboutWin; }
