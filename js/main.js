@@ -274,7 +274,28 @@
       cover: "images/games/1697700.jpg", playtime_min: 360, pinned: false },
     { slug: "man-home", name: "Man I Just Wanna Go Home", en: "Man I Just Wanna Go Home",
       category: "独立与情感叙事", platform: "PC", appid: 3010070,
-      cover: "images/games/3010070.jpg", playtime_min: 60, pinned: false }
+      cover: "images/games/3010070.jpg", playtime_min: 60, pinned: false },
+    { slug: "baldurs-gate-3", name: "博德之门3", en: "Baldur's Gate 3",
+      category: "箱庭与开放世界", platform: "PC", appid: 1086940,
+      cover: "images/games/1086940.jpg", playtime_min: 2160, pinned: false },
+    { slug: "chants-sennaar", name: "巴别塔圣歌", en: "Chants of Sennaar",
+      category: "独立与情感叙事", platform: "PC", appid: 1931770,
+      cover: "images/games/1931770.jpg", playtime_min: 720, pinned: false },
+    { slug: "dont-starve-together", name: "饥荒联机版", en: "Don't Starve Together",
+      category: "策略与模拟", platform: "PC", appid: 322330,
+      cover: "images/games/322330.jpg", playtime_min: 900, pinned: false },
+    { slug: "kentucky-route-zero", name: "肯塔基0号国道", en: "Kentucky Route Zero",
+      category: "独立与情感叙事", platform: "PC", appid: 231200,
+      cover: "images/games/231200.jpg", playtime_min: 420, pinned: false },
+    { slug: "cultist-simulator", name: "密教模拟器", en: "Cultist Simulator",
+      category: "策略与模拟", platform: "PC", appid: 718670,
+      cover: "images/games/718670.jpg", playtime_min: 120, pinned: false },
+    { slug: "norco", name: "诺科", en: "NORCO",
+      category: "RPG与重叙事", platform: "PC", appid: 1221250,
+      cover: "images/games/1221250.jpg", playtime_min: 600, pinned: false },
+    { slug: "dont-feed-monkeys", name: "不要喂食猴子", en: "Do Not Feed the Monkeys",
+      category: "策略与模拟", platform: "PC", appid: 658850,
+      cover: "images/games/658850.jpg", playtime_min: 720, pinned: false }
   ];
 
   var gameShelfActiveCat = 'all';
@@ -379,10 +400,10 @@
 
   /* ===== PDF 下载 — 桌面图标触发 ===== */
   document.querySelector('[data-window="pdf"]').addEventListener('click', function () {
-    window.open('resume/27届关卡策划实习简历_梁好_0628.pdf', '_blank');
+    window.open('resume/梁好_27届关卡策划校招简历_0822.pdf', '_blank');
   });
   document.querySelector('[data-window="pdf"]').addEventListener('dblclick', function () {
-    window.open('resume/27届关卡策划实习简历_梁好_0628.pdf', '_blank');
+    window.open('resume/梁好_27届关卡策划校招简历_0822.pdf', '_blank');
   });
 
   /* ===== 反馈表单提交 ===== */
